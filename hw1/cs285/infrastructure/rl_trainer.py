@@ -72,7 +72,8 @@ class RL_Trainer(object):
 
         ## TODO initialize all of the TF variables (that were created by agent, etc.)
         ## HINT: use global_variables_initializer
-        TODO
+        self.inp = tf.Variable()
+        self.op = tf.Variable()
 
     def run_training_loop(self, n_iter, collect_policy, eval_policy,
                         initial_expertdata=None, relabel_with_expert=False,
@@ -151,6 +152,9 @@ class RL_Trainer(object):
 
         # TODO decide whether to load training data or use
         # HINT: depending on if it's the first iteration or not,
+        if itr == 1:
+            return load_initial_expertdata, 0, None
+
             # decide whether to either
                 # load the data. In this case you can directly return as follows
                 # ``` return loaded_paths, 0, None ```
