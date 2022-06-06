@@ -93,7 +93,7 @@ class PGAgent(BaseAgent):
         # Case 1: trajectory-based PG 
         if not self.reward_to_go:
             
-            # TODO: Estimate the Q value Q^{pi}(s_t, a_t) using rewards from that entire trajectory
+            # (DONE) TODO: Estimate the Q value Q^{pi}(s_t, a_t) using rewards from that entire trajectory
             # HINT1: value of each point (t) = total discounted reward summed over the entire trajectory (from 0 to T-1)
                 # In other words, q(s_t, a_t) = sum_{t'=0}^{T-1} gamma^t' r_{t'}
             # Hint3: see the helper functions at the bottom of this file
@@ -102,7 +102,7 @@ class PGAgent(BaseAgent):
         # Case 2: reward-to-go PG 
         else:
 
-            # TODO: Estimate the Q value Q^{pi}(s_t, a_t) as the reward-to-go
+            # (DONE) TODO: Estimate the Q value Q^{pi}(s_t, a_t) as the reward-to-go
             # HINT1: value of each point (t) = total discounted reward summed over the remainder of that trajectory (from t to T-1)
                 # In other words, q(s_t, a_t) = sum_{t'=t}^{T-1} gamma^(t'-t) * r_{t'}
             # Hint3: see the helper functions at the bottom of this file
