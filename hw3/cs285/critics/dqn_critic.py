@@ -54,7 +54,7 @@ class DQNCritic(BaseCritic):
             #currentReward + self.gamma * qValuesOfNextTimestep * (1 - self.done_mask_ph)
         # HINT2: see above, where q_tp1 is defined as the q values of the next timestep
         # HINT3: see the defined placeholders and look for the one that holds current rewards
-        target_q_t = TODO
+        target_q_t = currentReward + self.gamma * qValuesOfNextTimestep * (1 - self.done_mask_ph)
         target_q_t = tf.stop_gradient(target_q_t)
 
         #####################
